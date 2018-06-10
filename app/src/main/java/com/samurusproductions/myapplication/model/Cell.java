@@ -6,17 +6,18 @@ package com.samurusproductions.myapplication.model;
  */
 
 public class Cell {
-    public Cell(int x, int y, String listCountry, Integer listFlag) {
-        this.x = x;
-        this.y = y;
-        this.listCountry = listCountry;
-        this.listFlag = listFlag;
-    }
 
+    String name;
+    Integer imageId;
     private int x;
     private int y;
-    String listCountry;
-    Integer listFlag;
+
+    public Cell(int x, int y, String name, Integer listFlag) {
+        this.x = x;
+        this.y = y;
+        this.name = name;
+        this.imageId = listFlag;
+    }
 
     public int getX() {
         return x;
@@ -35,25 +36,20 @@ public class Cell {
     }
 
 
-
-    public String getListCountry() {
-        return listCountry;
+    public String getName() {
+        return name;
     }
 
-    public void setListCountry(String listCountry) {
-        this.listCountry = listCountry;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public Integer getListFlag() {
-        return listFlag;
+    public Integer getImageId() {
+        return imageId;
     }
 
-    public void setListFlag(Integer listFlag) {
-        this.listFlag = listFlag;
+    public void setImageId(Integer imageId) {
+        this.imageId = imageId;
     }
-
-
-
-
 
 }

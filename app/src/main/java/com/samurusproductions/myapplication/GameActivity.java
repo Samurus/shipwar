@@ -42,9 +42,9 @@ public class GameActivity extends AppCompatActivity  implements
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener()
         {
             @Override
-            public void onItemClick(AdapterView<?> arg0, View arg1, int position,
-                                    long arg3) {
+            public void onItemClick(AdapterView<?> adapterView, View cell, int position, long unused) {
                 Toast.makeText(GameActivity.this, String.valueOf(position), Toast.LENGTH_SHORT).show();
+                ((Cell) adapterView.getAdapter().getItem(position)).setImageId(R.drawable.);
             }
         });
     }

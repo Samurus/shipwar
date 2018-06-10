@@ -21,12 +21,12 @@ import java.util.ArrayList;
  */
 
 public class BoardAdapter extends BaseAdapter {
-   private ArrayList<Cell> listCell;
+    private ArrayList<Cell> listCell;
     private Activity activity;
 
-    public BoardAdapter(Activity activity,ArrayList<Cell> listCell) {
+    public BoardAdapter(Activity activity, ArrayList<Cell> listCell) {
         super();
-        this.listCell=listCell;
+        this.listCell = listCell;
         this.activity = activity;
     }
 
@@ -36,7 +36,8 @@ public class BoardAdapter extends BaseAdapter {
     }
 
     @Override
-    public Object getItem(int i){return listCell.get(i);
+    public Object getItem(int i) {
+        return listCell.get(i);
     }
 
     @Override
@@ -49,8 +50,7 @@ public class BoardAdapter extends BaseAdapter {
         ViewHolder view;
         LayoutInflater inflator = activity.getLayoutInflater();
 
-        if(convertView==null)
-        {
+        if (convertView == null) {
             view = new ViewHolder();
             convertView = inflator.inflate(R.layout.cell, null);
 
@@ -58,14 +58,9 @@ public class BoardAdapter extends BaseAdapter {
             view.imgViewFlag = (ImageView) convertView.findViewById(R.id.imageView1);
 
             convertView.setTag(view);
-        }
-        else
-        {
+        } else {
             view = (ViewHolder) convertView.getTag();
         }
-
-        //view.txtViewTitle.setText(listCell.get(position).getListCountry());
-        //view.imgViewFlag.setImageResource(listCell.get(position).getListFlag());
 
         return convertView;
     }
@@ -76,8 +71,7 @@ public class BoardAdapter extends BaseAdapter {
         return new CharSequence[0];
     }
 
-    public static class ViewHolder
-    {
+    public static class ViewHolder {
         public ImageView imgViewFlag;
         public TextView txtViewTitle;
     }
