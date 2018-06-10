@@ -23,14 +23,10 @@ public class GameActivity extends AppCompatActivity  implements
     private ArrayList<String> listCountry;
     private ArrayList<Integer> listFlag;
 
-    private GridView gridView;
-private Button button;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        setContentView(R.layout.activity_game_board);
 
         prepareList();
 
@@ -38,7 +34,7 @@ private Button button;
         mAdapter = new BoardAdapter(this,listCountry, listFlag);
 
         // Set custom adapter to gridview
-        gridView = (GridView) findViewById(R.id.gridView);
+        GridView gridView  = (GridView) findViewById(R.id.gridView);
         gridView.setAdapter(mAdapter);
 
         // Implement On Item click listener
@@ -47,19 +43,9 @@ private Button button;
             @Override
             public void onItemClick(AdapterView<?> arg0, View arg1, int position,
                                     long arg3) {
-                Toast.makeText(GameActivity.this, (Integer) mAdapter.getItem(position), Toast.LENGTH_SHORT).show();
+                Toast.makeText(GameActivity.this,   (CharSequence) mAdapter.getItem(position), Toast.LENGTH_SHORT).show();
             }
         });
-        setContentView(R.layout.activity_game_board);
-
-        button = findViewById(R.id.boardButton);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(getApplicationContext(), "abc", Toast.LENGTH_SHORT).show();
-            }
-        });
-        System.out.println("abcd");
     }
 
 
@@ -78,6 +64,7 @@ private Button button;
         listCountry.add("Italy");
         listCountry.add("Japan");
         listCountry.add("Korea");
+
         listCountry.add("Mexico");
         listCountry.add("Netherlands");
         listCountry.add("Portugal");
@@ -86,6 +73,7 @@ private Button button;
         listCountry.add("Spain");
         listCountry.add("Turkey");
         listCountry.add("United Kingdom");
+        listCountry.add("United States");
         listCountry.add("United States");
 
         listFlag = new ArrayList<Integer>();
@@ -107,6 +95,7 @@ private Button button;
         listFlag.add(R.drawable.spain);
         listFlag.add(R.drawable.turkey);
         listFlag.add(R.drawable.united_kingdom);
+        listFlag.add(R.drawable.united_states);
         listFlag.add(R.drawable.united_states);
     }
 
