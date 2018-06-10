@@ -11,7 +11,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.samurusproductions.myapplication.R;
+import com.samurusproductions.myapplication.model.Cell;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 /**
@@ -19,24 +21,22 @@ import java.util.ArrayList;
  */
 
 public class BoardAdapter extends BaseAdapter {
-    private ArrayList<String> listCountry;
-    private ArrayList<Integer> listFlag;
+   private ArrayList<Cell> listCell;
     private Activity activity;
 
-    public BoardAdapter(Activity activity,ArrayList<String> listCountry, ArrayList<Integer> listFlag) {
+    public BoardAdapter(Activity activity,ArrayList<Cell> listCell) {
         super();
-        this.listCountry = listCountry;
-        this.listFlag = listFlag;
+        this.listCell=listCell;
         this.activity = activity;
     }
 
     @Override
     public int getCount() {
-        return listCountry.size();
+        return listCell.size();
     }
 
     @Override
-    public Object getItem(int i){return listCountry.get(i);
+    public Object getItem(int i){return listCell.get(i);
     }
 
     @Override
@@ -64,8 +64,8 @@ public class BoardAdapter extends BaseAdapter {
             view = (ViewHolder) convertView.getTag();
         }
 
-        view.txtViewTitle.setText(listCountry.get(position));
-        view.imgViewFlag.setImageResource(listFlag.get(position));
+        //view.txtViewTitle.setText(listCell.get(position).getListCountry());
+        //view.imgViewFlag.setImageResource(listCell.get(position).getListFlag());
 
         return convertView;
     }

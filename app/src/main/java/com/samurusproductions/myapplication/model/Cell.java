@@ -6,19 +6,54 @@ package com.samurusproductions.myapplication.model;
  */
 
 public class Cell {
-    public Cell(int number) {
-        this.number = number;
+    public Cell(int x, int y, String listCountry, Integer listFlag) {
+        this.x = x;
+        this.y = y;
+        this.listCountry = listCountry;
+        this.listFlag = listFlag;
     }
 
-    public int getNumber() {
-        return number;
+    private int x;
+    private int y;
+    String listCountry;
+    Integer listFlag;
+
+    public int getX() {
+        return x;
     }
 
-    public void setNumber(int number) {
-        this.number = number;
+    public void setX(int x) {
+        this.x = x;
     }
 
-    int number;
+    public int getY() {
+        return y;
+    }
+
+    public void setY(int y) {
+        this.y = y;
+    }
+
+
+
+    public String getListCountry() {
+        return listCountry;
+    }
+
+    public void setListCountry(String listCountry) {
+        this.listCountry = listCountry;
+    }
+
+    public Integer getListFlag() {
+        return listFlag;
+    }
+
+    public void setListFlag(Integer listFlag) {
+        this.listFlag = listFlag;
+    }
+
+
+
 
 
 }
