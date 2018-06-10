@@ -1,19 +1,17 @@
 package com.samurusproductions.myapplication.adapter;
 
 import android.app.Activity;
-import android.content.Context;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
-import android.widget.TextView;
+import android.widget.Toast;
 
+import com.samurusproductions.myapplication.GameActivity;
 import com.samurusproductions.myapplication.R;
 import com.samurusproductions.myapplication.model.Cell;
-
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 /**
@@ -48,18 +46,17 @@ public class BoardAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder view;
-        LayoutInflater inflator = activity.getLayoutInflater();
+        LayoutInflater inflater = activity.getLayoutInflater();
 
         if (convertView == null) {
             view = new ViewHolder();
-            convertView = inflator.inflate(R.layout.cell, null);
+            convertView = inflater.inflate(R.layout.cell, null);
 
-            view.txtViewTitle = (TextView) convertView.findViewById(R.id.textView1);
-            view.imgViewFlag = (ImageView) convertView.findViewById(R.id.imageView1);
+            view.imageView = convertView.findViewById(R.id.imageViewRow);
 
             convertView.setTag(view);
         } else {
-            view = (ViewHolder) convertView.getTag();
+            Toast.makeText(activity, String.valueOf(((ViewHolder) convertView.getTag()).imageView), Toast.LENGTH_SHORT).show();
         }
 
         return convertView;
@@ -72,7 +69,6 @@ public class BoardAdapter extends BaseAdapter {
     }
 
     public static class ViewHolder {
-        public ImageView imgViewFlag;
-        public TextView txtViewTitle;
+        public ImageView imageView;
     }
 }

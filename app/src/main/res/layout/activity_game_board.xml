@@ -5,23 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".GameActivity" >
-
-    <ImageView
-        android:id="@+id/selection"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:contentDescription="TODO" />
+    tools:context=".GameActivity">
 
     <GridView
         android:id="@+id/gridView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:horizontalSpacing="10dp"
+        android:layout_marginTop="50dp"
+        android:horizontalSpacing="0dp"
         android:numColumns="10"
-        android:verticalSpacing="10dp">
-
-
-    </GridView>
-
+        android:verticalSpacing="0dp"></GridView>
 </LinearLayout>
