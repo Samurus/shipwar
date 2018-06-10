@@ -4,6 +4,5 @@
     android:id="@+id/test"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@drawable/england"
-    android:padding="5dp"
+    android:background="@drawable/border"
     />
