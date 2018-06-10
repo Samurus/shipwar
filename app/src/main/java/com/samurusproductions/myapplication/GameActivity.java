@@ -28,15 +28,14 @@ public class GameActivity extends AppCompatActivity {
         prepareList();
 
         // prepared arraylist and passed it to the Adapter class
-        boardAdapter = new BoardAdapter(this,listCell);
+        boardAdapter = new BoardAdapter(this, listCell);
 
         // Set custom adapter to gridview
-        final GridView gridView  = (GridView) findViewById(R.id.gridView);
+        final GridView gridView = (GridView) findViewById(R.id.gridView);
         gridView.setAdapter(boardAdapter);
 
         // Implement On Item click listener
-        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener()
-        {
+        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View cell, int position, long unused) {
                 ((Cell) adapterView.getAdapter().getItem(position)).setImageId(R.drawable.german);
@@ -48,13 +47,10 @@ public class GameActivity extends AppCompatActivity {
         });
     }
 
-
-
-    public void prepareList()
-    {
+    public void prepareList() {
         for (int x = 0; x < 10; x++) {
             for (int y = 0; y < 10; y++) {
-                this.listCell.add(new Cell(x, y, "test",R.layout.cell));
+                this.listCell.add(new Cell(x, y, "test", R.layout.cell));
             }
         }
     }

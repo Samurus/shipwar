@@ -9,9 +9,9 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.samurusproductions.myapplication.GameActivity;
 import com.samurusproductions.myapplication.R;
 import com.samurusproductions.myapplication.model.Cell;
+
 import java.util.ArrayList;
 
 /**

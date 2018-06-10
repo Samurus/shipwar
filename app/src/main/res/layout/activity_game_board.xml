@@ -14,5 +14,5 @@
         android:layout_marginTop="50dp"
         android:horizontalSpacing="0dp"
         android:numColumns="10"
-        android:verticalSpacing="0dp"></GridView>
+        android:verticalSpacing="0dp" />
 </LinearLayout>
